@@ -19,10 +19,3 @@ clean:
 	rm -f $(TARGET) $(OBJS)
 
 .PHONY: all clean
-
-
-# ALTERNATE
-# CC=gcc
-# SRCS=main.c header.c 
-# main: $(CC)
-# 	$(SRCS)

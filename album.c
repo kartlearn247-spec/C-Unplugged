@@ -48,7 +48,7 @@ Album* Del_Album(char album[50], Album* head) {
 
     while (curr != NULL) {
         if (strcmp(curr->nameA, album) == 0) {
-            // Found the album. Unlink it from the list.
+            
             prev->nextA = curr->nextA;
 
             // Free the list of songs within the album
@@ -58,7 +58,7 @@ Album* Del_Album(char album[50], Album* head) {
                 free(song_node);
                 song_node = next_song;
             }
-            // Free the album struct itself
+            
             free(curr);
             
             FILE* fp = fopen(albfile,"w");

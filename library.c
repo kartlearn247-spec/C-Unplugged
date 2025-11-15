@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include "struct.h"
 
-Master_Node* Get_head_MasterLL(){ //As well it generates the linked list
+Master_Node* Get_head_MasterLL(){
     FILE* fp = fopen("Songs.txt","r");
     if (fp == NULL) {
         perror("Error opening Songs.txt");
@@ -18,7 +18,7 @@ Master_Node* Get_head_MasterLL(){ //As well it generates the linked list
         song* s = malloc(sizeof(song));
         if (s == NULL) {
             perror("Failed to allocate memory for song");
-            continue; // Skip this entry
+            continue; 
         }
         strcpy(s->name,title);
         strcpy(s->artist,artist_name);
@@ -26,7 +26,7 @@ Master_Node* Get_head_MasterLL(){ //As well it generates the linked list
         Master_Node* newnode = malloc(sizeof(Master_Node));
         if (newnode == NULL) {
             perror("Failed to allocate memory for master node");
-            free(s); // Clean up partially allocated memory
+            free(s);
             continue;
         }
         newnode->song_address = s;
@@ -73,7 +73,7 @@ static Album_Node* Get_head_SongA(char Album[50],Master_Node* head_master){
 
     FILE* fp = fopen(full_path,"r");
     if (fp == NULL) {
-        // This is not necessarily an error, the album file might just not exist yet.
+        
         return NULL;
     }
     char song_name[50];
@@ -200,10 +200,10 @@ void FreeAlbum(Album* Albumhead){
         Album_Node* songhead = tempA->album_head;
         while(songhead!=NULL){
             Album_Node* currsong = songhead;
-            songhead = songhead->next; // Advance pointer before freeing
+            songhead = songhead->next;
             free(currsong);
         }
-        // Correctly advance the album pointer before freeing the current one
+
         tempA=tempA->nextA;
         free(Albumhead);
         Albumhead = tempA;
