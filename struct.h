@@ -41,10 +41,8 @@ struct Playlist_Node{
 typedef struct Playlist_Node Playlist_Node;
 
 struct Playlist{
-    // int length;
     Playlist_Node* head;
     Playlist_Node* current_song;
-
 };
 typedef struct Playlist Playlist;
 #endif
