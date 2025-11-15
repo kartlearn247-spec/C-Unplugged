@@ -20,12 +20,12 @@ int main()
     PlaylistVar->current_song = NULL;
     Playlist_Node *head_playlist = Get_Head(head_master, PlaylistVar);
     PlaylistVar->head = head_playlist;
-    // printf("A\n");
+
     while (1)
     {
         printf(">");
         char s[100];
-        // printf("A\n");
+
 
 
         // getting the input
@@ -37,7 +37,6 @@ int main()
         else
         {
             fprintf(f_log, "[LOG ]User Command : %s", s);
-            // Now remove newline for parsing
             s[strcspn(s, "\n")] = '\0';
         }
 
@@ -68,19 +67,15 @@ int main()
             continue;
         }
 
-        // printf("A\n");
-
         // Library functions
         if (strcmp(s, "Show Albums") == 0)
         {
-            // This should ideally call: show_albums(album_list);
             show_albums(head_album_det);
             continue;
         }
 
         if (strcmp(s, "Show Songs") == 0)
         {
-            // This should ideally call: show_songs(master_list);
             show_songs(head_master);
             continue;
         }
@@ -117,7 +112,6 @@ int main()
 
         if (strncmp(s, "Add Song Album ", 15) == 0)
         {
-            // Renamed variables for clarity
             char song_name[50], alb_name[50];
             int N_words = sscanf(s, "Add Song Album \"%[^\"]\" \"%[^\"]\"", song_name, alb_name);
             if (N_words == 2)
