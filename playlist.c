@@ -11,33 +11,26 @@ Playlist_Node* Get_Head(Master_Node* master_head,Playlist* P){
     char cur_song[50];
     fscanf(fp,"Current song: \"%[^\"]\"",cur_song);
     fgetc(fp); //consume a new line
-    // printf("curr song %s\n",cur_song);
     Playlist_Node* head = NULL;
     Playlist_Node* temp = NULL;
     
     
     int flag = 0;
     while(fscanf(fp,"\"%[^\"]\"\n",line)==1){
-        // printf("line :%s\n",line);
         flag = 1;
         Playlist_Node* newnode = malloc(sizeof(Playlist_Node));
         newnode->next = NULL;
         newnode->prev = NULL;
         newnode->song_address = GetAddress(line,master_head);   
-        // printf("1\n");
-        // printf("newnode sonadd name : %sk\n",newnode->song_address->name);
         if(strcmp(newnode->song_address->name,cur_song)==0){
             P->current_song = newnode;
-            // printf("4\n");
         }
         if(head==NULL){
-            // printf("2\n");
 
             head = newnode;
             temp = head;
         }
         else{
-            // printf("3\n");
             temp->next = newnode;
             newnode->prev = temp;
             temp = temp->next;
@@ -85,7 +78,6 @@ void Del_song_Playlist(char songname[50],Playlist* p){
         printf("The playlist is empty\n");
         return;
     }
-    // Case 1: Deleting the only node in the playlist
     if(p->head->next == p->head && strcmp(p->head->song_address->name, songname) == 0){
         free(p->head);
         p->head = NULL;
@@ -134,7 +126,6 @@ void Add_song_Playlist(char songname[50],Master_Node* master_head,Playlist* P){
         Playlist_Node* newnodep = malloc(sizeof(Playlist_Node));
         newnodep->song_address = sgAddress;
 
-        // If playlist is empty
         if(P->head == NULL){
             P->head = newnodep;
             P->current_song = newnodep;
@@ -142,7 +133,6 @@ void Add_song_Playlist(char songname[50],Master_Node* master_head,Playlist* P){
             newnodep->prev = newnodep;
         }
         else{
-            //inserting after the current song
             Playlist_Node* currnext = P->current_song->next;
             
             P->current_song->next = newnodep;
