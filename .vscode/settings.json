@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "library.h": "c",
+        "struct.h": "c",
+        "playlist.h": "c",
+        "album.h": "c"
+    }
+}

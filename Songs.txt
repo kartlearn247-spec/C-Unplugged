@@ -1,0 +1,6 @@
+|Bohemian Rhapsody|Queen|354|
+|Stairway to Heaven|Led Zeppelin|482|
+|Hotel California|Eagles|391|
+|Yesterday|The Beatles|125|
+|Billie Jean|Michael Jackson|294|
+|Shape of You|Ed Sheeran|233|

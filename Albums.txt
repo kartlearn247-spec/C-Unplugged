@@ -1,0 +1,4 @@
+RockClassics
+NewAlbum
+PopHits
+Acoustic
