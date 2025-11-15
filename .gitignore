@@ -1,0 +1,15 @@
+# Ignore compiled object files
+*.o
+
+# Ignore the main executable
+music_app
+
+# Ignore log files
+*.log
+
+# Ignore .txt files that are not part of the source
+# (We can be more specific if some .txt files ARE source)
+*.txt
+
+# Ignore VS Code specific files
+.vscode/
