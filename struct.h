@@ -43,7 +43,6 @@ typedef struct Playlist_Node Playlist_Node;
 struct Playlist{
     Playlist_Node* head;
     Playlist_Node* current_song;
-
 };
 typedef struct Playlist Playlist;
 #endif

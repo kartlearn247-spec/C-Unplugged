@@ -71,7 +71,6 @@ int main()
 
         if (strcmp(s, "Show Songs") == 0)
         {
-
             show_songs(head_master);
             continue;
         }
